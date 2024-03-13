@@ -1,0 +1,63 @@
+<!-- For user to add and see their spots -->
+<!-- Split Dashboard btween added spots and My favorite spots-->
+{% extends "base.html"%}
+
+{% block title %} Serencity - My Dashboard {% endblock%}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"> {% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="jumbotron text-center bg-light">
+        <h1> Welcome -- Name Here! </h1>
+        <p> View added spots and yoru favorite spots </p>
+    </div>
+    <div class="row">
+        <!--
+            <div class="col-lg-6 mb-4">
+                <h4>My Favorite Spots</h4>
+                <div class="list-group scrollable-list" id="favorite-spots-list">
+                </div>
+            </div>
+            -->
+
+        <div class="col-lg-6 mb-4">
+            <h4>Added Spots</h4>
+            <div class="list-group scrollable-list" id="added-spots-list">
+                {% for result in results %}
+                <tr data-id="{{ result.id }}">
+                    <td class="clickable-label">
+                        <a href="/obj/{{ result.id }}" class="list-group-item list-group-item-action">
+                            {{ result.name }}
+                        </a>
+                        {% endfor %}
+                <!--load user's spots here -->
+                <!-- load user's spots here 
+                        Let's rethink this apot and favorite spot section 
+                        1. Wanna display all spots here, use for statement 
+                        2. once displayed, we need to be able to click on the spot to view spot details 
+                        - can use:
+                            - mvd to server cz jinja sometimes runs the code anyway
+                    -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h4> Recent Invites </h4>
+            <div class="list-group" id="recent-invites-list">
+                <!-- load user's recent invites here -->
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <h4> Quick Links </h4>
+            <div class="list-group">
+                <!-- quick links attached below here -->
+                <a href="/map" class="list-group-item list-group-item-action"> View Map and add spots </a>
+                <a href="/map" class="list-group-item list-group-item-action"> Invite Friends </a>
+            </div>
+        </div>
+
+    </div>

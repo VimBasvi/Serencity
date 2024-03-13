@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title%} Serencity - Home {% endblock%}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 custom-container">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="display-4" style="color: green; font-family: mono;">✿ Serencity</h1>
+        </div>
+
+        <div class="row">
+            <!-- Details Section -->
+            <div class="col-md-6">
+                <p class="text-secondary" style="color: green; font-family: monospace;">a collective map where users
+                    can
+                    share their favorite serene spots in an area and send
+                    invites to friends to sit next to in serenity</p>
+
+                <ul class="list-unstyled" style="color: green; font-family: monospace;">
+                    <li>✿ Find serene spots on campus!</li>
+                    <li>✿ Have fun with your friends </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

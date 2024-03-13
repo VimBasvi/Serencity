@@ -1,0 +1,88 @@
+/* index.html css */
+
+body {
+    background-color: #99E698;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: "yu-mincho-pr6n", sans-serif !important;
+    background-image: url('/static/images/map.png');
+  }
+
+  @keyframes map {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 2;
+    }
+
+    100% {
+        scale: 1;
+    }
+
+  }
+  
+  .welcome-form {
+    background-color: #EFF9EA;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    border: dotted 2px black;
+    border-radius: 5px;
+    margin-top :5%;
+  }
+
+  @media (max-width: 700px) {
+    .welcome-form {
+        width: 70%; /* Set width to 75% when screen size is less than 700px */
+    }
+}
+
+  .logo-image {
+    width:75%;
+  }
+
+  .text {
+    padding-bottom: 15%;
+    padding-top: 5%;
+  }
+
+  button {
+    padding: 0px 20px;
+    border: 1px solid green;
+    border-radius: 50px;
+    background-color: transparent;
+    color: green;
+    font-family: "Allura";
+    font-size: xx-large;
+}
+
+button:hover {
+    background-color: #99E698;
+    animation: glowing 1300ms infinite;
+}
+
+@keyframes glowing {
+    0% {
+        color:green;
+        
+    }
+
+    50% {
+        color:rgb(240 245 197);
+        box-shadow: rgb(240 245 197) 0 0 60px 33px;
+    }
+
+    100% {
+        
+        color:green;
+    }
+}
+    

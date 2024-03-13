@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title%} Serencity - Send Invite {% endblock%}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/invite.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="invite-container">
+    <div class="form-container invite-form">
+        <form action="/invite" method="post">
+            
+            <h4> Invite a friend </h4>
+            <div  class="form-group">
+            <label for="eventname">Event Name:</label>
+            <input type="text" class="form-control" id="eventname" name="eventname">
+            </div>
+
+            <div  class="form-group">
+            <label for="location"> Location:</label>
+            <select id="location" name="location">
+                <option value="" selected>Choose Location</option>
+                {% for spot in spots %}
+                    <option value="{{ spot.id }}">{{ spot.name }} - {{ spot.approx_adress }}</option>
+                {% endfor%}
+            </select> 
+            </div>
+
+            <div  class="form-group">
+                <label for="date"> Date:</label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+
+            <div  class="form-group">
+                <label for="time"> Time:</label>
+                <input type="time" class="form-control" id="time" name="time">
+            </div>
+
+            <div  class="form-group">
+                <label for="emails"> Emails [comma-separated]: </label>
+                <input type="text" class="form-control" id="emails" name="emails" data-role="tagsinput">
+            </div>
+
+            <div  class="form-group">
+                <label for="description"> Invite notes: </label>
+                <input type="text" class="form-control" id="description" name="description">
+            </div>
+
+            <div class="button-container">
+                <input type="submit" value="Send Invitation ☺" class="btn btn-primary custom-button2">
+            </div>
+
+            
+        </form>
+    </div>
+</div>
+{% endblock %}

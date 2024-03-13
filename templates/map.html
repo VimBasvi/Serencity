@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Serencity - Map {% endblock%}
+
+{% block additional_css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/sheet1.css') }}"> {% endblock %}
+
+{% block content %}
+    <!-- <img class="add-button" src="static/images/add-button.png" alt="add spot button" onclick="window.location.href='/add_spot'"></img>  -->
+    {% if current_user.is_authenticated%}
+    <button class="add-button" onclick="window.location.href='/add_spot'"> ＋ </button> 
+    {% endif %}
+      <!--Map Container -->
+        <div id="map"></div>
+<script type="text/javascript">
+  let locationsData = {{ locations|tojson|safe}}; //idk why its angry but it works
+</script>
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initMap" async defer></script>
+
+{%endblock%}

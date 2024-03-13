@@ -1,0 +1,24 @@
+instance/serencity.db
+
+# Virtual env dir 
+venv/
+
+# Poss. Compiled bytecode:
+__pycache__/
+*.pyc
+*.pyo
+
+# Flask config 
+*.cfg
+*.ini
+
+#Databases just in case 
+*.db
+*.sqlite
+
+# Contain passwords and keys:
+.env
+
+
+
+

@@ -1,0 +1,54 @@
+{% extends "base.html"%}
+
+{% block title %} Serencity - My Dashboard {% endblock %}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="jumbotron text-center bg-light">
+        <h1> Welcome -- {{ user_name }}! </h1>
+        <p> View added spots and your favorite spots </p>
+    </div>
+    <div class="row">
+        <!-- My Favorite Spots Section - Currently Not Implemented -->
+
+        <div class="col-lg-6 mb-4">
+            <h4>Added Spots</h4>
+            <div class="list-group scrollable-list" id="added-spots-list">
+                {% for result in results %}
+                <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <a href="/spot/{{ result.id }}" class="flex-grow-1 mr-2">
+                        {{ result.name }}
+                    </a>
+                    <i class="fal fa-regular fa-bookmark save-spot-icon" data-spot-id="{{ result.id }}" style="cursor: pointer;"></i>
+                </div>
+                {% endfor %}
+            </div>            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h4> Recent Invites </h4>
+            <div class="list-group" id="recent-invites-list">
+                <!-- load user's recent invites here -->
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <h4> Quick Links </h4>
+            <div class="list-group">
+                <a href="/map" class="list-group-item list-group-item-action"> View Map and add spots </a>
+                <a href="/invite" class="list-group-item list-group-item-action"> Invite Friends </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+
+{% endblock %}

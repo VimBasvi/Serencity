@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Yu Mincho Font-->
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'deu1feo',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allura">
+  </head>
+
+  <body>
+    <div class="welcome-form">
+
+        <div class="welcome-to">
+            <i>Welcome to:</i>
+        </div>
+        <img src="/static/images/logo.png" class="logo-image"></img>
+
+        <div class="text">
+            <p>
+                ✿ An interactive map to find, save, and share serene spots around you.
+                <br>
+                <br>
+                Invite a friend to frolic in a field, sit under your favorite tree, or go for a walk in the farm ✿ 
+            </p>
+        </div>
+
+        <button onclick="window.location.href='/google'"> enter → </button>
+
+    </div>
+
+
+  </body>
+  </html>

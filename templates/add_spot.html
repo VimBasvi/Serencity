@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %} Serencity - Add Spots {% endblock%}
+
+{% block additional_css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/sheet1.css') }}"> {% endblock %}
+
+{% block content %}
+  <div class="container-fluid custom-container" style="padding: 3%; height: 100%;">
+      <div class="row h-100">
+  
+        <!-- Spot info form container -->
+        <div class="col-md-3 col-lg-4">
+          <h2> ✎ Add a New Spot</h2>
+          <form class="custom-form" action="/add_spot" method="post" enctype="multipart/form-data">
+          
+            <div class="form-group">
+              <label for="address">Click on the location of your spot on the map → </label>
+              <input type="text" class="form-control" id="address" name="address" readonly>
+            </div>
+            <strong>{{address_error_msg}}</strong>
+
+            <div  class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Ex: Sarah's Tree">
+            </div>
+
+            <div class="form-group">
+              <label for="spotImage">What does this place look like? (Upload image)</label>
+              <input type="file" class="form-control-file" id="spotImage" name="spotImage">
+            </div>
+
+            <div class="form-group">
+              <label for="audioFile">What does this place sound like? <i>(Upload audio)</i></label>
+              <input type="file" class="form-control-file" id="audioFile" name="audioFile">
+            </div>
+            
+
+            <div  class="form-group">
+              <label for="description"> Notes: </label>
+              <textarea class="form-control" id="description" name="description" style="height:200px" placeholder="Directions, memories, etc"></textarea>
+            </div>
+
+
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+            
+            <!--Just in case we need extra  info on the place we might as well have the place id-->
+            <input type="hidden" id="place_id" name="place_id">
+
+            <!-- submit button needs to somehow take the info, and submit and commit it to db 
+             1. take infor submit to server 
+             2. commit the info to db - hope theres no duplicate
+             3. you can head over to dashboard and work on displaying the spots
+            -->
+
+            <div class="button-container">
+            <button type="submit" class="btn btn-primary custom-button2"> add to map </button>
+            </div>
+          </form>
+        </div>
+
+        <!--Map Container -->
+        <div class="col-md-9 col-lg-8" style="padding: 0;">
+          <div id="map" style="height: 600px;"></div>
+        </div>
+
+      </div>
+  </div>
+
+ 
+ 
+
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initMap" async defer></script>
+
+{%endblock%}
