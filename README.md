@@ -47,7 +47,7 @@ GOOGLE_CLIENT_ID=your_client_id_here
 GOOGLE_CLIENT_SECRET=your_client_secret_here
 ````
 
-## Steps to Set Environment Variables
+## These are the Steps to Set Environment Variables
 - [Steps to get Keys] (https://docs.google.com/document/d/1kUtxLRn5iqxcP2-q2KLt6ZnEpUdv9dgzD7TWDzSeJZc/edit)
 
 
