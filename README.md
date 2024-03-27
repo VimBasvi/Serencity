@@ -50,6 +50,7 @@ GOOGLE_CLIENT_SECRET=your_client_secret_here
 ## Steps to Set Environment Variables
 - [Steps to get Keys] (https://docs.google.com/document/d/1kUtxLRn5iqxcP2-q2KLt6ZnEpUdv9dgzD7TWDzSeJZc/edit)
 
+
 ## Authors 
 Developed over 3 months in CPSC 419 Fall 2023 class. 
 - [aileen.siele@yale.edu] (Aileen Siele)
